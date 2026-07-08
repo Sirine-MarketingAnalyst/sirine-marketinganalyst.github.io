@@ -1825,7 +1825,9 @@
   </footer>
 
   <script>
-    // Mobile nav toggle
+    // ==========================================
+    // 1. Mobile navigation toggle & interactions
+    // ==========================================
     const toggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     toggle.addEventListener('click', () => {
@@ -1835,12 +1837,54 @@
       a.addEventListener('click', () => navLinks.classList.remove('open'));
     });
 
-    // Nav shadow on scroll
+    // ==========================================
+    // 2. Navigation shadow effect on scroll
+    // ==========================================
     const nav = document.querySelector('.nav');
     window.addEventListener('scroll', () => {
       nav.style.boxShadow = window.scrollY > 10 ? '0 4px 24px rgba(11,31,69,0.1)' : 'none';
     });
+
+    // ==========================================
+    // 3. GA4 Section View Tracking (Optimized)
+    // ==========================================
+    // Target your specific section IDs
+    const sectionIds = ["pricing", "contact", "about", "testimonials", "process", "portfolio", "services"];
+    
+    // Select the actual DOM elements from the page
+    const sectionsToTrack = Array.from(document.querySelectorAll("section, div"))
+      .filter(el => sectionIds.includes(el.id));
+
+    // Prevent tracking the same section multiple times during one scroll session
+    const trackedSections = new Set();
+
+    const observerOptions = {
+      root: null, // Default browser viewport
+      rootMargin: "0px",
+      threshold: 0.5 // Fires when 50% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !trackedSections.has(entry.target.id)) {
+          const activeSection = entry.target.id;
+          
+          trackedSections.add(activeSection);
+
+          // Send data directly to your standard GA4 global tracking function
+          if (typeof gtag === "function") {
+            gtag("event", "section_view", {
+              "section_name": activeSection
+            });
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Initialize the tracking observer on your elements
+    sectionsToTrack.forEach((section) => observer.observe(section));
   </script>
+
 
 </body>
 </html>
