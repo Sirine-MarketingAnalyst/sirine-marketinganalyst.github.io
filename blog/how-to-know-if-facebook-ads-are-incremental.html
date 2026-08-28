@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Know If Your Facebook Ads Are Actually Incremental | Sirine Ben Mansour</title>
+  <meta name="description" content="Platform-reported conversions do not prove incrementality. Practical ways for DTC brands to measure true lift from Meta / Facebook ads.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sirineanalytics.github.io/blog/how-to-know-if-facebook-ads-are-incremental.html">
+  <meta name="theme-color" content="#0B1F45">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Know If Your Facebook Ads Are Actually Incremental">
+  <meta property="og:description" content="How to measure whether Meta ads are generating new customers or revenue that would not have happened otherwise.">
+  <meta property="og:url" content="https://sirineanalytics.github.io/blog/how-to-know-if-facebook-ads-are-incremental.html">
+  <meta property="og:image" content="https://sirineanalytics.github.io/website/assets/images/dash1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F45; --navy-mid: #163172; --ivory: #F7F5F0; --sand: #EAE6DC;
+      --accent: #D4862A; --accent-light: #F0A840; --text: #1A1A2E; --muted: #4A5268;
+      --white: #FFFFFF; --serif: 'DM Serif Display', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; --radius: 6px;
+    }
+    body { font-family: var(--sans); background: var(--ivory); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+    .nav { background: var(--ivory); border-bottom: 1px solid rgba(11,31,69,0.08); padding: 18px 0; position: sticky; top: 0; z-index: 50; }
+    .nav__inner { max-width: 760px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .nav__brand { font-family: var(--serif); color: var(--navy); font-size: 1.1rem; }
+    .nav__back { font-size: 0.84rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .nav__back:hover { color: var(--navy); text-decoration: none; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.85rem, 4vw, 2.45rem); color: var(--navy); line-height: 1.2; margin-bottom: 20px; }
+    .short-answer { background: #fff; border-left: 4px solid var(--accent); padding: 20px 22px; margin: 28px 0 36px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(11,31,69,0.06); }
+    .short-answer strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
+    .short-answer p { color: var(--text); font-size: 1.02rem; margin: 0; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; color: var(--navy); margin: 40px 0 14px; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 24px 0 10px; }
+    p, li { color: var(--muted); font-size: 1rem; margin-bottom: 14px; }
+    ul, ol { padding-left: 22px; margin-bottom: 16px; } li { margin-bottom: 8px; } li::marker { color: var(--accent); }
+    .cta { margin-top: 48px; background: var(--navy); color: var(--white); border-radius: 12px; padding: 32px 28px; text-align: center; }
+    .cta h2 { color: var(--white); margin: 0 0 12px; font-size: 1.4rem; }
+    .cta p { color: rgba(255,255,255,0.85); margin-bottom: 20px; }
+    .cta a { display: inline-flex; padding: 12px 24px; background: var(--accent); color: var(--white); border-radius: var(--radius); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    .cta a:hover { background: var(--accent-light); color: var(--navy); text-decoration: none; }
+    .related { margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(11,31,69,0.1); }
+    .related h3 { margin-top: 0; } .related ul { list-style: none; padding: 0; } .related li { margin-bottom: 10px; }
+    footer { background: #07132C; padding: 24px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    footer a { color: rgba(255,255,255,0.55); }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__brand">Sirine Ben Mansour</a>
+    <a href="index.html" class="nav__back">← All articles</a>
+  </div>
+</header>
+<main>
+  <p class="meta">Incrementality · Meta Ads · Causal measurement</p>
+  <h1>How to Know If Your Facebook Ads Are Actually Incremental</h1>
+
+  <div class="short-answer">
+    <strong>Short answer</strong>
+    <p>Platform-reported conversions and ROAS do not prove incrementality. To know whether Meta is generating new customers or revenue that would not have happened otherwise, you need experiments (geo lift, holdout tests) or statistical methods (MMM, causal inference).</p>
+  </div>
+
+  <p>Many people who convert after seeing a Meta ad would have bought anyway — through brand search, organic traffic, email, or word of mouth. View-through conversions and broad attribution windows amplify this effect. High reported ROAS can therefore coexist with low (or even negative) incremental return.</p>
+
+  <h2>Why reported conversions overstate impact</h2>
+  <ul>
+    <li>Attribution windows give Meta credit for conversions that had other strong drivers.</li>
+    <li>View-through conversions credit impressions that the user may barely have noticed.</li>
+    <li>Brand and demand-capture activity (retargeting, branded search) looks artificially strong.</li>
+    <li>Prospecting and upper-funnel activity often look weaker than they truly are.</li>
+  </ul>
+
+  <h2>Ways to measure true incrementality (ranked by rigor)</h2>
+  <ol>
+    <li><strong>Geo experiments / GeoLift</strong> — Turn ads off or change spend in test regions and compare to control regions. One of the strongest practical methods for DTC brands.</li>
+    <li><strong>Conversion lift studies</strong> — Meta’s own lift tools when available and properly designed.</li>
+    <li><strong>Marketing Mix Modeling</strong> — Isolates the contribution of Meta while controlling for other channels, seasonality, promotions, and baseline demand.</li>
+    <li><strong>Matched-market or PSA tests</strong> — Useful alternatives when pure geo designs are constrained.</li>
+    <li><strong>Simple holdout tests</strong> on smaller audiences — Less precise but still directional.</li>
+  </ol>
+
+  <h2>Practical starting point for most DTC brands</h2>
+  <p>Run a clean geo experiment on a meaningful portion of spend for 4–6 weeks. Measure incremental revenue and incremental CAC. Use the results to calibrate how much of Meta’s reported ROAS is real.</p>
+  <p>Healthy channels often show incremental ROAS well below platform-reported ROAS. The goal is not zero discrepancy — it is knowing the true marginal return so you can allocate budget correctly.</p>
+
+  <h2>What “good” looks like</h2>
+  <p>You should be able to answer: “If I spent $10k more (or less) on Meta next month, how much incremental revenue and contribution margin should I expect?” Platform dashboards cannot answer that question reliably. Experiments and MMM can get you much closer.</p>
+
+  <div class="related">
+    <h3>Related reading</h3>
+    <ul>
+      <li><a href="why-meta-google-shopify-never-agree.html">Why Meta, Google and Shopify Never Agree on Revenue</a></li>
+      <li><a href="mmm-vs-attribution.html">Marketing Mix Modeling vs Attribution: What’s the Difference?</a></li>
+      <li><a href="how-to-measure-true-roi.html">How to Measure the True ROI of Your Marketing Channels</a></li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <h2>Ready to measure true lift from Meta?</h2>
+    <p>I design and run geo experiments and Marketing Mix Models that show which spend is actually incremental — not just attributed.</p>
+    <a href="https://cal.com/sirine-ben-mansour/discoverycall" target="_blank" rel="noopener">Book a 15-min call</a>
+  </div>
+</main>
+<footer>
+  <p>© 2026 Sirine Ben Mansour · <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · <a href="../privacy-policy.html">Privacy</a></p>
+</footer>
+</body>
+</html>

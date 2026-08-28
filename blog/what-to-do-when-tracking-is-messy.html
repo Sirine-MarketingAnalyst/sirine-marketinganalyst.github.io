@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What to Do When Your Marketing Tracking Is a Mess | Sirine Ben Mansour</title>
+  <meta name="description" content="Don’t try to fix everything at once. The highest-leverage tracking fixes for DTC brands, in priority order.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sirineanalytics.github.io/blog/what-to-do-when-tracking-is-messy.html">
+  <meta name="theme-color" content="#0B1F45">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What to Do When Your Marketing Tracking Is a Mess">
+  <meta property="og:description" content="Priority-ordered tracking fixes for DTC brands with messy data.">
+  <meta property="og:url" content="https://sirineanalytics.github.io/blog/what-to-do-when-tracking-is-messy.html">
+  <meta property="og:image" content="https://sirineanalytics.github.io/website/assets/images/dash1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F45; --navy-mid: #163172; --ivory: #F7F5F0; --sand: #EAE6DC;
+      --accent: #D4862A; --accent-light: #F0A840; --text: #1A1A2E; --muted: #4A5268;
+      --white: #FFFFFF; --serif: 'DM Serif Display', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; --radius: 6px;
+    }
+    body { font-family: var(--sans); background: var(--ivory); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+    .nav { background: var(--ivory); border-bottom: 1px solid rgba(11,31,69,0.08); padding: 18px 0; position: sticky; top: 0; z-index: 50; }
+    .nav__inner { max-width: 760px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .nav__brand { font-family: var(--serif); color: var(--navy); font-size: 1.1rem; }
+    .nav__back { font-size: 0.84rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .nav__back:hover { color: var(--navy); text-decoration: none; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.85rem, 4vw, 2.45rem); color: var(--navy); line-height: 1.2; margin-bottom: 20px; }
+    .short-answer { background: #fff; border-left: 4px solid var(--accent); padding: 20px 22px; margin: 28px 0 36px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(11,31,69,0.06); }
+    .short-answer strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
+    .short-answer p { color: var(--text); font-size: 1.02rem; margin: 0; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; color: var(--navy); margin: 40px 0 14px; }
+    p, li { color: var(--muted); font-size: 1rem; margin-bottom: 14px; }
+    ul, ol { padding-left: 22px; margin-bottom: 16px; } li { margin-bottom: 8px; } li::marker { color: var(--accent); }
+    .cta { margin-top: 48px; background: var(--navy); color: var(--white); border-radius: 12px; padding: 32px 28px; text-align: center; }
+    .cta h2 { color: var(--white); margin: 0 0 12px; font-size: 1.4rem; }
+    .cta p { color: rgba(255,255,255,0.85); margin-bottom: 20px; }
+    .cta a { display: inline-flex; padding: 12px 24px; background: var(--accent); color: var(--white); border-radius: var(--radius); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    .cta a:hover { background: var(--accent-light); color: var(--navy); text-decoration: none; }
+    .related { margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(11,31,69,0.1); }
+    .related h3 { margin-top: 0; } .related ul { list-style: none; padding: 0; } .related li { margin-bottom: 10px; }
+    footer { background: #07132C; padding: 24px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    footer a { color: rgba(255,255,255,0.55); }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__brand">Sirine Ben Mansour</a>
+    <a href="index.html" class="nav__back">← All articles</a>
+  </div>
+</header>
+<main>
+  <p class="meta">Tracking · Data quality · DTC</p>
+  <h1>What to Do When Your Marketing Tracking Is a Mess</h1>
+
+  <div class="short-answer">
+    <strong>Short answer</strong>
+    <p>Start with the highest-leverage fixes: consistent UTM parameters, a clean order source of truth, and basic conversion tracking validation. Do not try to fix everything at once.</p>
+  </div>
+
+  <h2>Priority order of fixes</h2>
+  <ol>
+    <li><strong>UTM & campaign naming hygiene</strong> — Enforce a simple, documented taxonomy.</li>
+    <li><strong>Shopify / order data integrity</strong> — Ensure source, discount, and customer fields are reliable.</li>
+    <li><strong>Pixel & Conversion API health</strong> — Verify Meta, Google, TikTok events are firing correctly and match order volume directionally.</li>
+    <li><strong>Refund and cancellation handling</strong> — Make sure revenue metrics reflect net numbers.</li>
+    <li><strong>Cross-domain and consent mode issues</strong> (if relevant).</li>
+    <li>Only then move to advanced attribution or MMM readiness.</li>
+  </ol>
+
+  <h2>Quick audit checklist</h2>
+  <ul>
+    <li>Do 90%+ of paid orders have clean UTMs?</li>
+    <li>Does platform-reported conversion volume roughly track Shopify order volume?</li>
+    <li>Can you calculate a trustworthy blended CAC from your own data?</li>
+  </ul>
+
+  <p>Fix the foundation first. Fancy models on dirty data produce expensive confusion.</p>
+
+  <div class="related">
+    <h3>Related reading</h3>
+    <ul>
+      <li><a href="single-source-of-truth-dtc.html">How to Build a Single Source of Truth for DTC Marketing Data</a></li>
+      <li><a href="why-meta-google-shopify-never-agree.html">Why Meta, Google and Shopify Never Agree on Revenue</a></li>
+      <li><a href="how-to-measure-true-roi.html">How to Measure the True ROI of Your Marketing Channels</a></li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <h2>Tracking is messy? That’s normal — and fixable.</h2>
+    <p>Every engagement starts with a data audit. I help DTC brands clean the foundation before building dashboards or models.</p>
+    <a href="https://cal.com/sirine-ben-mansour/discoverycall" target="_blank" rel="noopener">Book a 15-min call</a>
+  </div>
+</main>
+<footer>
+  <p>© 2026 Sirine Ben Mansour · <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · <a href="../privacy-policy.html">Privacy</a></p>
+</footer>
+</body>
+</html>

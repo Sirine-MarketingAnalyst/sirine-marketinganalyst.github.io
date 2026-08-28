@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Your CAC Keeps Increasing as You Scale Paid Ads | Sirine Ben Mansour</title>
+  <meta name="description" content="Rising CAC as you scale is often normal economics, not broken ads. How to diagnose the real cause and decide what to do next.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sirineanalytics.github.io/blog/why-cac-increases-as-you-scale.html">
+  <meta name="theme-color" content="#0B1F45">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Why Your CAC Keeps Increasing as You Scale Paid Ads">
+  <meta property="og:description" content="Why CAC rises with scale and how DTC brands should respond.">
+  <meta property="og:url" content="https://sirineanalytics.github.io/blog/why-cac-increases-as-you-scale.html">
+  <meta property="og:image" content="https://sirineanalytics.github.io/website/assets/images/dash1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F45; --navy-mid: #163172; --ivory: #F7F5F0; --sand: #EAE6DC;
+      --accent: #D4862A; --accent-light: #F0A840; --text: #1A1A2E; --muted: #4A5268;
+      --white: #FFFFFF; --serif: 'DM Serif Display', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; --radius: 6px;
+    }
+    body { font-family: var(--sans); background: var(--ivory); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+    .nav { background: var(--ivory); border-bottom: 1px solid rgba(11,31,69,0.08); padding: 18px 0; position: sticky; top: 0; z-index: 50; }
+    .nav__inner { max-width: 760px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .nav__brand { font-family: var(--serif); color: var(--navy); font-size: 1.1rem; }
+    .nav__back { font-size: 0.84rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .nav__back:hover { color: var(--navy); text-decoration: none; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.85rem, 4vw, 2.45rem); color: var(--navy); line-height: 1.2; margin-bottom: 20px; }
+    .short-answer { background: #fff; border-left: 4px solid var(--accent); padding: 20px 22px; margin: 28px 0 36px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(11,31,69,0.06); }
+    .short-answer strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
+    .short-answer p { color: var(--text); font-size: 1.02rem; margin: 0; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; color: var(--navy); margin: 40px 0 14px; }
+    p, li { color: var(--muted); font-size: 1rem; margin-bottom: 14px; }
+    ul, ol { padding-left: 22px; margin-bottom: 16px; } li { margin-bottom: 8px; } li::marker { color: var(--accent); }
+    .cta { margin-top: 48px; background: var(--navy); color: var(--white); border-radius: 12px; padding: 32px 28px; text-align: center; }
+    .cta h2 { color: var(--white); margin: 0 0 12px; font-size: 1.4rem; }
+    .cta p { color: rgba(255,255,255,0.85); margin-bottom: 20px; }
+    .cta a { display: inline-flex; padding: 12px 24px; background: var(--accent); color: var(--white); border-radius: var(--radius); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    .cta a:hover { background: var(--accent-light); color: var(--navy); text-decoration: none; }
+    .related { margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(11,31,69,0.1); }
+    .related h3 { margin-top: 0; } .related ul { list-style: none; padding: 0; } .related li { margin-bottom: 10px; }
+    footer { background: #07132C; padding: 24px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    footer a { color: rgba(255,255,255,0.55); }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__brand">Sirine Ben Mansour</a>
+    <a href="index.html" class="nav__back">← All articles</a>
+  </div>
+</header>
+<main>
+  <p class="meta">Scaling · CAC · Budget decisions</p>
+  <h1>Why Your CAC Keeps Increasing as You Scale Paid Ads</h1>
+
+  <div class="short-answer">
+    <strong>Short answer</strong>
+    <p>CAC rises with scale because you exhaust the highest-intent audiences first, competition increases bids, creative fatigue sets in, and the marginal customer is harder (and more expensive) to acquire. This is normal economics, not necessarily a failure of your ads.</p>
+  </div>
+
+  <p>Many teams interpret rising CAC as a sign that “something is broken.” Sometimes tracking or creative is the issue. More often, you are simply moving up the cost curve of the market.</p>
+
+  <h2>Core reasons CAC climbs</h2>
+  <ul>
+    <li><strong>Audience saturation</strong> — You have already converted many of the easiest, highest-intent buyers.</li>
+    <li><strong>Rising CPMs and CPCs</strong> — Competition for the remaining inventory pushes prices up.</li>
+    <li><strong>Creative and offer fatigue</strong> — Frequency rises and response rates fall.</li>
+    <li><strong>Weaker conversion rates on colder audiences</strong> — The next customer is harder to convince.</li>
+    <li><strong>Measurement artifacts</strong> — Attribution windows and overlapping credit can make efficiency look worse as spend grows.</li>
+  </ul>
+
+  <h2>How to diagnose the real cause</h2>
+  <ul>
+    <li>Segment CAC by audience type, creative, and funnel stage.</li>
+    <li>Track frequency and creative performance over time.</li>
+    <li>Compare new-customer CAC vs blended CAC.</li>
+    <li>Look at marginal CAC (the cost of the last dollar of spend) rather than average CAC alone.</li>
+  </ul>
+
+  <h2>What to do about it</h2>
+  <ul>
+    <li>Improve creative velocity and structured testing.</li>
+    <li>Expand into new audiences or channels before fully saturating current ones.</li>
+    <li>Use incrementality data or MMM to find the point of diminishing returns.</li>
+    <li>Shift budget toward channels or tactics with better marginal returns.</li>
+    <li>Focus on retention and LTV so a higher CAC can still be profitable.</li>
+  </ul>
+
+  <p>Rising CAC is a signal to optimize allocation and creative systems — not automatically a reason to cut spend.</p>
+
+  <div class="related">
+    <h3>Related reading</h3>
+    <ul>
+      <li><a href="roas-vs-cac-vs-ltv.html">ROAS vs CAC vs LTV: Which Metric Should DTC Brands Actually Use?</a></li>
+      <li><a href="how-to-decide-next-10000-budget.html">How to Decide Where to Put Your Next $10,000 of Marketing Budget</a></li>
+      <li><a href="how-to-measure-true-roi.html">How to Measure the True ROI of Your Marketing Channels</a></li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <h2>Want to find the right scale point for each channel?</h2>
+    <p>I help DTC brands quantify diminishing returns and reallocate budget toward the highest incremental impact.</p>
+    <a href="https://cal.com/sirine-ben-mansour/discoverycall" target="_blank" rel="noopener">Book a 15-min call</a>
+  </div>
+</main>
+<footer>
+  <p>© 2026 Sirine Ben Mansour · <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · <a href="../privacy-policy.html">Privacy</a></p>
+</footer>
+</body>
+</html>

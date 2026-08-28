@@ -6,6 +6,61 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://sirineanalytics.github.io/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sirineanalytics.github.io/blog/why-meta-google-shopify-never-agree.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sirineanalytics.github.io/blog/roas-vs-cac-vs-ltv.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sirineanalytics.github.io/blog/how-to-know-if-facebook-ads-are-incremental.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sirineanalytics.github.io/blog/why-cac-increases-as-you-scale.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sirineanalytics.github.io/blog/how-to-decide-next-10000-budget.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sirineanalytics.github.io/blog/mmm-vs-attribution.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sirineanalytics.github.io/blog/why-last-click-misleads-dtc.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sirineanalytics.github.io/blog/single-source-of-truth-dtc.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sirineanalytics.github.io/blog/what-to-do-when-tracking-is-messy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sirineanalytics.github.io/blog/how-to-measure-true-roi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sirineanalytics.github.io/privacy-policy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

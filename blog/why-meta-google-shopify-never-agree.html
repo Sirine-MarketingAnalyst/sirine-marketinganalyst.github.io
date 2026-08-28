@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Meta, Google and Shopify Never Agree on Revenue | Sirine Ben Mansour</title>
+  <meta name="description" content="Meta, Google, and Shopify report different revenue numbers because they measure different things. Here’s why the gap is normal and which number you should actually use.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sirineanalytics.github.io/blog/why-meta-google-shopify-never-agree.html">
+  <meta name="theme-color" content="#0B1F45">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Why Meta, Google and Shopify Never Agree on Revenue">
+  <meta property="og:description" content="Why the three platforms report different numbers and which figure you should trust for decisions.">
+  <meta property="og:url" content="https://sirineanalytics.github.io/blog/why-meta-google-shopify-never-agree.html">
+  <meta property="og:image" content="https://sirineanalytics.github.io/website/assets/images/dash1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F45; --navy-mid: #163172; --ivory: #F7F5F0; --sand: #EAE6DC;
+      --accent: #D4862A; --accent-light: #F0A840; --text: #1A1A2E; --muted: #4A5268;
+      --white: #FFFFFF; --serif: 'DM Serif Display', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; --radius: 6px;
+    }
+    body { font-family: var(--sans); background: var(--ivory); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { background: var(--ivory); border-bottom: 1px solid rgba(11,31,69,0.08); padding: 18px 0; position: sticky; top: 0; z-index: 50; }
+    .nav__inner { max-width: 760px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .nav__brand { font-family: var(--serif); color: var(--navy); font-size: 1.1rem; }
+    .nav__back { font-size: 0.84rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .nav__back:hover { color: var(--navy); text-decoration: none; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.85rem, 4vw, 2.45rem); color: var(--navy); line-height: 1.2; margin-bottom: 20px; }
+    .short-answer {
+      background: #fff; border-left: 4px solid var(--accent); padding: 20px 22px; margin: 28px 0 36px;
+      border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(11,31,69,0.06);
+    }
+    .short-answer strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
+    .short-answer p { color: var(--text); font-size: 1.02rem; margin: 0; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; color: var(--navy); margin: 40px 0 14px; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 24px 0 10px; }
+    p, li { color: var(--muted); font-size: 1rem; margin-bottom: 14px; }
+    ul, ol { padding-left: 22px; margin-bottom: 16px; }
+    li { margin-bottom: 8px; }
+    li::marker { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.95rem; }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid rgba(11,31,69,0.1); }
+    th { background: var(--sand); color: var(--navy); font-weight: 600; }
+    td { color: var(--muted); }
+    .cta {
+      margin-top: 48px; background: var(--navy); color: var(--white); border-radius: 12px; padding: 32px 28px; text-align: center;
+    }
+    .cta h2 { color: var(--white); margin: 0 0 12px; font-size: 1.4rem; }
+    .cta p { color: rgba(255,255,255,0.85); margin-bottom: 20px; }
+    .cta a {
+      display: inline-flex; padding: 12px 24px; background: var(--accent); color: var(--white); border-radius: var(--radius);
+      font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .cta a:hover { background: var(--accent-light); color: var(--navy); text-decoration: none; }
+    .related { margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(11,31,69,0.1); }
+    .related h3 { margin-top: 0; }
+    .related ul { list-style: none; padding: 0; }
+    .related li { margin-bottom: 10px; }
+    footer { background: #07132C; padding: 24px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    footer a { color: rgba(255,255,255,0.55); }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__brand">Sirine Ben Mansour</a>
+    <a href="index.html" class="nav__back">← All articles</a>
+  </div>
+</header>
+<main>
+  <p class="meta">Measurement · Attribution · DTC</p>
+  <h1>Why Meta, Google and Shopify Never Agree on Revenue</h1>
+
+  <div class="short-answer">
+    <strong>Short answer</strong>
+    <p>Meta, Google, and Shopify report different revenue numbers because they measure different things with different rules. Meta and Google use their own attribution models (including view-through and modeled conversions). Shopify records actual completed orders. The gap is normal and expected.</p>
+  </div>
+
+  <p>If you’ve ever opened Meta Ads Manager, Google Ads, and Shopify on the same day and wondered why none of the revenue numbers match, you’re not alone. This is one of the most common sources of confusion for DTC brands — and one of the main reasons teams lose trust in their dashboards.</p>
+
+  <h2>What each platform actually measures</h2>
+
+  <h3>Shopify</h3>
+  <p>Shopify records real orders that hit your store. It includes every paid order, refunds, cancellations, and source data from UTM parameters or the order source field. When an order is placed, Shopify knows the exact amount, the customer, and (usually) how they arrived.</p>
+
+  <h3>Meta Ads</h3>
+  <p>Meta reports conversions attributed to Meta according to the attribution window you set (commonly 7-day click + 1-day view). This can include view-through conversions and some modeled or estimated conversions. Meta is optimizing and reporting against its own definition of a conversion, not against your Shopify order count.</p>
+
+  <h3>Google Ads / GA4</h3>
+  <p>Google uses its own click-based (and in some cases view-based) conversion rules. GA4 applies data-driven or last-click attribution and has different session and user definitions than Meta or Shopify. Cross-device behavior and consent settings can further widen the gap.</p>
+
+  <h2>Main reasons the numbers diverge</h2>
+  <ul>
+    <li><strong>Attribution windows and lookback periods differ</strong> — A conversion counted by Meta may fall outside Google’s window, or vice versa.</li>
+    <li><strong>View-through vs click-through credit</strong> — Meta often gives credit for impressions that weren’t clicked; Shopify only sees the order.</li>
+    <li><strong>Cross-device and cross-browser gaps</strong> — The same person can appear as multiple users across platforms.</li>
+    <li><strong>Refunds, cancellations, and partial payments</strong> — Platforms treat these differently and with different timing.</li>
+    <li><strong>Overlap</strong> — The same order can be claimed by Meta, Google, email, and organic at the same time.</li>
+    <li><strong>Data delays and modeled conversions</strong> — Platform numbers can change after the fact as models update.</li>
+  </ul>
+
+  <h2>What number should you actually use for decisions?</h2>
+  <p>Use Shopify (or your order management system) as the source of truth for total revenue and order volume. Use platform-reported numbers only as directional efficiency signals inside that platform.</p>
+  <p>To understand true contribution — which channel actually caused incremental revenue — you need to move beyond platform dashboards to multi-touch attribution, incrementality tests (such as geo experiments), or Marketing Mix Modeling.</p>
+
+  <table>
+    <thead>
+      <tr><th>Source</th><th>Best used for</th><th>Not reliable for</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Shopify</td><td>Total revenue, orders, refunds</td><td>Channel-level incremental impact</td></tr>
+      <tr><td>Meta / Google reported</td><td>In-platform optimization signals</td><td>True incremental ROI or budget allocation</td></tr>
+      <tr><td>Incrementality / MMM</td><td>Strategic budget decisions</td><td>Day-to-day creative testing</td></tr>
+    </tbody>
+  </table>
+
+  <h2>FAQ</h2>
+  <h3>Is the gap a tracking error?</h3>
+  <p>Usually no. Differences of 20–50% or more are common even with clean tracking. Large, sudden changes can indicate a tracking issue, but steady divergence is expected.</p>
+
+  <h3>Should I trust Meta’s reported ROAS?</h3>
+  <p>Only as a platform-level efficiency signal, not as a measure of incremental revenue. High reported ROAS can coexist with low or even negative incremental return.</p>
+
+  <h3>How do I close the gap?</h3>
+  <p>You don’t fully close it — you contextualize it. Align attribution windows where possible, validate tracking health, then use experiments or MMM to estimate true incremental contribution.</p>
+
+  <div class="related">
+    <h3>Related reading</h3>
+    <ul>
+      <li><a href="how-to-know-if-facebook-ads-are-incremental.html">How to Know If Your Facebook Ads Are Actually Incremental</a></li>
+      <li><a href="single-source-of-truth-dtc.html">How to Build a Single Source of Truth for DTC Marketing Data</a></li>
+      <li><a href="mmm-vs-attribution.html">Marketing Mix Modeling vs Attribution: What’s the Difference?</a></li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <h2>Want a clear view of what’s actually driving revenue?</h2>
+    <p>I help DTC brands reconcile conflicting platform numbers and measure true incremental impact with MMM, GeoLift, and decision-ready dashboards.</p>
+    <a href="https://cal.com/sirine-ben-mansour/discoverycall" target="_blank" rel="noopener">Book a 15-min call</a>
+  </div>
+</main>
+<footer>
+  <p>© 2026 Sirine Ben Mansour · <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · <a href="../privacy-policy.html">Privacy</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marketing Mix Modeling vs Attribution: What’s the Difference? | Sirine Ben Mansour</title>
+  <meta name="description" content="Attribution and Marketing Mix Modeling answer different questions. When to use each — and why the strongest DTC teams use both.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sirineanalytics.github.io/blog/mmm-vs-attribution.html">
+  <meta name="theme-color" content="#0B1F45">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Marketing Mix Modeling vs Attribution: What’s the Difference?">
+  <meta property="og:description" content="Clear comparison of MMM and attribution for DTC marketing measurement.">
+  <meta property="og:url" content="https://sirineanalytics.github.io/blog/mmm-vs-attribution.html">
+  <meta property="og:image" content="https://sirineanalytics.github.io/website/assets/images/dash1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F45; --navy-mid: #163172; --ivory: #F7F5F0; --sand: #EAE6DC;
+      --accent: #D4862A; --accent-light: #F0A840; --text: #1A1A2E; --muted: #4A5268;
+      --white: #FFFFFF; --serif: 'DM Serif Display', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; --radius: 6px;
+    }
+    body { font-family: var(--sans); background: var(--ivory); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+    .nav { background: var(--ivory); border-bottom: 1px solid rgba(11,31,69,0.08); padding: 18px 0; position: sticky; top: 0; z-index: 50; }
+    .nav__inner { max-width: 760px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .nav__brand { font-family: var(--serif); color: var(--navy); font-size: 1.1rem; }
+    .nav__back { font-size: 0.84rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .nav__back:hover { color: var(--navy); text-decoration: none; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.85rem, 4vw, 2.45rem); color: var(--navy); line-height: 1.2; margin-bottom: 20px; }
+    .short-answer { background: #fff; border-left: 4px solid var(--accent); padding: 20px 22px; margin: 28px 0 36px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(11,31,69,0.06); }
+    .short-answer strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
+    .short-answer p { color: var(--text); font-size: 1.02rem; margin: 0; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; color: var(--navy); margin: 40px 0 14px; }
+    p, li { color: var(--muted); font-size: 1rem; margin-bottom: 14px; }
+    ul, ol { padding-left: 22px; margin-bottom: 16px; } li { margin-bottom: 8px; } li::marker { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.95rem; }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid rgba(11,31,69,0.1); }
+    th { background: var(--sand); color: var(--navy); font-weight: 600; } td { color: var(--muted); }
+    .cta { margin-top: 48px; background: var(--navy); color: var(--white); border-radius: 12px; padding: 32px 28px; text-align: center; }
+    .cta h2 { color: var(--white); margin: 0 0 12px; font-size: 1.4rem; }
+    .cta p { color: rgba(255,255,255,0.85); margin-bottom: 20px; }
+    .cta a { display: inline-flex; padding: 12px 24px; background: var(--accent); color: var(--white); border-radius: var(--radius); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    .cta a:hover { background: var(--accent-light); color: var(--navy); text-decoration: none; }
+    .related { margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(11,31,69,0.1); }
+    .related h3 { margin-top: 0; } .related ul { list-style: none; padding: 0; } .related li { margin-bottom: 10px; }
+    footer { background: #07132C; padding: 24px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    footer a { color: rgba(255,255,255,0.55); }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__brand">Sirine Ben Mansour</a>
+    <a href="index.html" class="nav__back">← All articles</a>
+  </div>
+</header>
+<main>
+  <p class="meta">MMM · Attribution · Measurement strategy</p>
+  <h1>Marketing Mix Modeling vs Attribution: What’s the Difference?</h1>
+
+  <div class="short-answer">
+    <strong>Short answer</strong>
+    <p>Attribution tries to assign credit for individual conversions across touchpoints. Marketing Mix Modeling (MMM) estimates the overall contribution of marketing and other factors to sales at an aggregate level. They answer different questions and work best together.</p>
+  </div>
+
+  <h2>Side-by-side comparison</h2>
+  <table>
+    <thead>
+      <tr><th>Aspect</th><th>Attribution</th><th>Marketing Mix Modeling</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Granularity</td><td>User / session level</td><td>Aggregate (daily / weekly)</td></tr>
+      <tr><td>Main question</td><td>Which touchpoint gets credit for this conversion?</td><td>How much did each channel contribute to overall sales?</td></tr>
+      <tr><td>Handles view-through & offline</td><td>Weakly</td><td>Strongly</td></tr>
+      <tr><td>Privacy / cookie impact</td><td>High</td><td>Low</td></tr>
+      <tr><td>Best for</td><td>Tactical optimization</td><td>Strategic budget allocation & long-term planning</td></tr>
+      <tr><td>Typical output</td><td>Credit percentages, ROAS by model</td><td>Response curves, ROI, base vs incremental sales</td></tr>
+    </tbody>
+  </table>
+
+  <h2>When to use which</h2>
+  <ul>
+    <li>Use <strong>attribution</strong> for in-platform optimization and short-term campaign decisions.</li>
+    <li>Use <strong>MMM</strong> when you need to understand true incremental contribution, media mix, and diminishing returns across all channels (including offline and brand).</li>
+    <li>Best practice: run both. Use attribution for daily work and MMM (or experiments) to calibrate and validate the bigger picture.</li>
+  </ul>
+
+  <p>Attribution is bottom-up. MMM is top-down. Neither is perfect alone. Together they give a much more reliable view of what is actually driving revenue.</p>
+
+  <div class="related">
+    <h3>Related reading</h3>
+    <ul>
+      <li><a href="how-to-know-if-facebook-ads-are-incremental.html">How to Know If Your Facebook Ads Are Actually Incremental</a></li>
+      <li><a href="why-last-click-misleads-dtc.html">Why Last-Click Attribution Can Mislead DTC Brands</a></li>
+      <li><a href="how-to-measure-true-roi.html">How to Measure the True ROI of Your Marketing Channels</a></li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <h2>Need both tactical and strategic measurement?</h2>
+    <p>I build causal MMM (Robyn / Meridian) and attribution systems that work together for clearer budget decisions.</p>
+    <a href="https://cal.com/sirine-ben-mansour/discoverycall" target="_blank" rel="noopener">Book a 15-min call</a>
+  </div>
+</main>
+<footer>
+  <p>© 2026 Sirine Ben Mansour · <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · <a href="../privacy-policy.html">Privacy</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Marketing Measurement for DTC Brands | Sirine Ben Mansour</title>
+  <meta name="description" content="Practical guides on marketing attribution, incrementality, ROAS vs CAC vs LTV, MMM, and building a single source of truth for DTC and e-commerce brands.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sirineanalytics.github.io/blog/">
+  <meta name="theme-color" content="#0B1F45">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sirineanalytics.github.io/blog/">
+  <meta property="og:title" content="Blog | Marketing Measurement for DTC Brands">
+  <meta property="og:description" content="Practical guides on attribution, incrementality, MMM, and better budget decisions for DTC brands.">
+  <meta property="og:image" content="https://sirineanalytics.github.io/website/assets/images/dash1.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F45;
+      --navy-mid: #163172;
+      --ivory: #F7F5F0;
+      --sand: #EAE6DC;
+      --accent: #D4862A;
+      --accent-light: #F0A840;
+      --text: #1A1A2E;
+      --muted: #4A5268;
+      --white: #FFFFFF;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --radius: 6px;
+    }
+    body { font-family: var(--sans); background: var(--ivory); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    .nav {
+      background: var(--ivory);
+      border-bottom: 1px solid rgba(11,31,69,0.08);
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav__inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav__brand { font-family: var(--serif); color: var(--navy); font-size: 1.15rem; }
+    .nav__links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav__links a { font-size: 0.88rem; font-weight: 500; color: #3D4560; text-transform: uppercase; letter-spacing: 0.03em; }
+    .nav__links a:hover { color: var(--navy); }
+    .nav__cta {
+      display: inline-flex; padding: 9px 18px; background: var(--navy); color: var(--white) !important;
+      border-radius: var(--radius); font-size: 0.84rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .nav__cta:hover { background: var(--navy-mid); }
+
+    .hero-blog {
+      background: var(--navy);
+      padding: 72px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-blog::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(700px 400px at 80% 20%, rgba(212,134,42,0.14), transparent 60%);
+      pointer-events: none;
+    }
+    .hero-blog__inner { position: relative; max-width: 720px; margin: 0 auto; }
+    .hero-blog__tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.76rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--accent-light); margin-bottom: 20px;
+    }
+    .hero-blog__tag::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+    .hero-blog h1 {
+      font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4.5vw, 2.8rem);
+      color: var(--white); line-height: 1.2; margin-bottom: 16px;
+    }
+    .hero-blog p { color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 560px; margin: 0 auto; }
+
+    main { max-width: 960px; margin: 0 auto; padding: 56px 24px 100px; }
+
+    .intro {
+      max-width: 640px; margin: 0 auto 48px; text-align: center;
+      color: var(--muted); font-size: 1.05rem;
+    }
+
+    .post-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 700px) {
+      .post-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .post-card {
+      background: var(--white);
+      border: 1px solid rgba(11,31,69,0.08);
+      border-radius: 10px;
+      padding: 28px 26px;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-card:hover {
+      box-shadow: 0 12px 32px -12px rgba(11,31,69,0.18);
+      transform: translateY(-2px);
+    }
+    .post-card__num {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 10px;
+    }
+    .post-card h2 {
+      font-family: var(--serif); font-weight: 400; font-size: 1.25rem;
+      color: var(--navy); line-height: 1.3; margin-bottom: 12px;
+    }
+    .post-card p {
+      color: var(--muted); font-size: 0.95rem; flex-grow: 1; margin-bottom: 18px;
+    }
+    .post-card__link {
+      font-size: 0.88rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .post-card__link:hover { text-decoration: underline; }
+
+    .cta-box {
+      margin-top: 64px;
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 40px 32px;
+      text-align: center;
+      color: var(--white);
+    }
+    .cta-box h2 {
+      font-family: var(--serif); font-weight: 400; font-size: 1.6rem; margin-bottom: 12px;
+    }
+    .cta-box p { color: rgba(255,255,255,0.85); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-box a {
+      display: inline-flex; padding: 12px 26px; background: var(--accent); color: var(--white);
+      border-radius: var(--radius); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .cta-box a:hover { background: var(--accent-light); color: var(--navy); }
+
+    footer {
+      background: #07132C;
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+    footer a { color: rgba(255,255,255,0.55); }
+    footer a:hover { color: var(--accent-light); }
+
+    @media (max-width: 600px) {
+      .nav__links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__brand">Sirine Ben Mansour</a>
+    <ul class="nav__links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="index.html" style="color:var(--navy);">Blog</a></li>
+      <li><a href="https://cal.com/sirine-ben-mansour/discoverycall" target="_blank" rel="noopener" class="nav__cta">Book a Call</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero-blog">
+  <div class="hero-blog__inner">
+    <div class="hero-blog__tag">Measurement Insights</div>
+    <h1>Better answers to the questions your ad platforms can’t answer</h1>
+    <p>Practical guides on attribution, incrementality, budget allocation, and building decision-ready analytics for DTC brands.</p>
+  </div>
+</section>
+
+<main>
+  <p class="intro">
+    These articles focus on the real measurement problems DTC and e-commerce teams face when Meta, Google, and Shopify disagree — and how to move from platform-reported numbers to evidence-based decisions.
+  </p>
+
+  <div class="post-grid">
+
+    <article class="post-card">
+      <div class="post-card__num">01</div>
+      <h2><a href="why-meta-google-shopify-never-agree.html">Why Meta, Google and Shopify Never Agree on Revenue</a></h2>
+      <p>Why the three platforms report different numbers, what each one actually measures, and which figure you should trust for decisions.</p>
+      <a href="why-meta-google-shopify-never-agree.html" class="post-card__link">Read article →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="post-card__num">02</div>
+      <h2><a href="roas-vs-cac-vs-ltv.html">ROAS vs CAC vs LTV: Which Metric Should DTC Brands Actually Use?</a></h2>
+      <p>No single metric is enough. How to use ROAS, CAC, and LTV together — and when each one becomes misleading.</p>
+      <a href="roas-vs-cac-vs-ltv.html" class="post-card__link">Read article →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="post-card__num">03</div>
+      <h2><a href="how-to-know-if-facebook-ads-are-incremental.html">How to Know If Your Facebook Ads Are Actually Incremental</a></h2>
+      <p>Platform-reported conversions do not prove incrementality. The practical ways to measure true lift from Meta spend.</p>
+      <a href="how-to-know-if-facebook-ads-are-incremental.html" class="post-card__link">Read article →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="post-card__num">04</div>
+      <h2><a href="why-cac-increases-as-you-scale.html">Why Your CAC Keeps Increasing as You Scale Paid Ads</a></h2>
+      <p>Rising CAC is often normal economics, not broken ads. How to diagnose the cause and decide what to do next.</p>
+      <a href="why-cac-increases-as-you-scale.html" class="post-card__link">Read article →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="post-card__num">05</div>
+      <h2><a href="how-to-decide-next-10000-budget.html">How to Decide Where to Put Your Next $10,000 of Marketing Budget</a></h2>
+      <p>Stop giving the next dollar to the channel with the highest reported ROAS. A clearer framework for marginal allocation.</p>
+      <a href="how-to-decide-next-10000-budget.html" class="post-card__link">Read article →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="post-card__num">06</div>
+      <h2><a href="mmm-vs-attribution.html">Marketing Mix Modeling vs Attribution: What’s the Difference?</a></h2>
+      <p>Attribution and MMM answer different questions. When to use each — and why the strongest teams use both.</p>
+      <a href="mmm-vs-attribution.html" class="post-card__link">Read article →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="post-card__num">07</div>
+      <h2><a href="why-last-click-misleads-dtc.html">Why Last-Click Attribution Can Mislead DTC Brands</a></h2>
+      <p>Last-click systematically undervalues demand creation and overvalues demand capture. What to use instead.</p>
+      <a href="why-last-click-misleads-dtc.html" class="post-card__link">Read article →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="post-card__num">08</div>
+      <h2><a href="single-source-of-truth-dtc.html">How to Build a Single Source of Truth for DTC Marketing Data</a></h2>
+      <p>Start with order data, layer clean cost data, enforce consistent definitions — then every other analysis gets easier.</p>
+      <a href="single-source-of-truth-dtc.html" class="post-card__link">Read article →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="post-card__num">09</div>
+      <h2><a href="what-to-do-when-tracking-is-messy.html">What to Do When Your Marketing Tracking Is a Mess</a></h2>
+      <p>Don’t try to fix everything at once. The highest-leverage tracking fixes for DTC brands, in priority order.</p>
+      <a href="what-to-do-when-tracking-is-messy.html" class="post-card__link">Read article →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="post-card__num">10</div>
+      <h2><a href="how-to-measure-true-roi.html">How to Measure the True ROI of Your Marketing Channels</a></h2>
+      <p>True ROI requires incremental revenue, not just attributed revenue. A practical path from platform ROAS to decision-ready numbers.</p>
+      <a href="how-to-measure-true-roi.html" class="post-card__link">Read article →</a>
+    </article>
+
+  </div>
+
+  <div class="cta-box">
+    <h2>Need help turning measurement into better budget decisions?</h2>
+    <p>I help DTC brands move from conflicting platform numbers to clear, incremental insight through MMM, incrementality tests, and decision-ready dashboards.</p>
+    <a href="https://cal.com/sirine-ben-mansour/discoverycall" target="_blank" rel="noopener">Book a 15-min call</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Sirine Ben Mansour · <a href="../index.html">Home</a> · <a href="../privacy-policy.html">Privacy</a> · <a href="../terms-of-service.html">Terms</a></p>
+</footer>
+
+</body>
+</html>
